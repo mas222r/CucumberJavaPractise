@@ -27,11 +27,11 @@ public class QuestionAboutOnlineHMRCServiceDef {
 	public void enteredFormWithValidData(DataTable data) throws Throwable {
 		
 		List<List<String>> dataInfo = data.raw();
-		driver.findElement(By.name("emailAddress5")).sendKeys(dataInfo.get(1).get(1));
-		driver.findElement(By.name("name6")).sendKeys(dataInfo.get(2).get(1));
-		driver.findElement(By.name("text512")).sendKeys(dataInfo.get(3).get(1));
-		driver.findElement(By.name("text513")).sendKeys(dataInfo.get(4).get(1));
-		driver.findElement(By.name("text425")).sendKeys(dataInfo.get(5).get(1));
+		driver.findElement(By.name(dataInfo.get(1).get(0))).sendKeys(dataInfo.get(1).get(1));
+		driver.findElement(By.name(dataInfo.get(2).get(0))).sendKeys(dataInfo.get(2).get(1));
+		driver.findElement(By.name(dataInfo.get(3).get(0))).sendKeys(dataInfo.get(3).get(1));
+		driver.findElement(By.name(dataInfo.get(4).get(0))).sendKeys(dataInfo.get(4).get(1));
+		driver.findElement(By.name(dataInfo.get(5).get(0))).sendKeys(dataInfo.get(5).get(1));
 		
 
 	}
@@ -46,11 +46,11 @@ public class QuestionAboutOnlineHMRCServiceDef {
 	@Then("^I checked that the form entered data$")
 	public void checkedTheFormEnteredData(DataTable data) throws Throwable {
 		List<List<String>> dataEnteredVerify = data.raw();
-		Assert.assertTrue(driver.findElement(By.name("emailAddress5")).getAttribute("value").contains(dataEnteredVerify.get(1).get(1)));
-		Assert.assertTrue(driver.findElement(By.name("name6")).getAttribute("value").contains(dataEnteredVerify.get(2).get(1)));
-		Assert.assertTrue(driver.findElement(By.name("text512")).getAttribute("value").contains(dataEnteredVerify.get(3).get(1)));
-		Assert.assertTrue(driver.findElement(By.name("text513")).getAttribute("value").contains(dataEnteredVerify.get(4).get(1)));
-		Assert.assertTrue(driver.findElement(By.name("text425")).getAttribute("value").contains(dataEnteredVerify.get(5).get(1)));
+		Assert.assertTrue(driver.findElement(By.name(dataEnteredVerify.get(1).get(0))).getAttribute("value").contains(dataEnteredVerify.get(1).get(1)));
+		Assert.assertTrue(driver.findElement(By.name(dataEnteredVerify.get(2).get(0))).getAttribute("value").contains(dataEnteredVerify.get(2).get(1)));
+		Assert.assertTrue(driver.findElement(By.name(dataEnteredVerify.get(3).get(0))).getAttribute("value").contains(dataEnteredVerify.get(3).get(1)));
+		Assert.assertTrue(driver.findElement(By.name(dataEnteredVerify.get(4).get(0))).getAttribute("value").contains(dataEnteredVerify.get(4).get(1)));
+		Assert.assertTrue(driver.findElement(By.name(dataEnteredVerify.get(5).get(0))).getAttribute("value").contains(dataEnteredVerify.get(5).get(1)));
 		
 	}
 	
